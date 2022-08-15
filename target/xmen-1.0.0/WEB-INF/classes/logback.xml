@@ -1,0 +1,20 @@
+<configuration>
+   <include resource="org/springframework/boot/logging/logback/base.xml" />   
+      <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+         <file>/oracle/applications/xmen/logs/xmen.log</file>
+         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>/oracle/applications/xmen/logs/xmen.%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>20</maxIndex>
+         </rollingPolicy>
+         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10MB</maxFileSize>
+         </triggeringPolicy>
+         <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level  - %msg%n</pattern>
+         </encoder>
+      </appender>
+      <root level="DEBUG">
+         <appender-ref ref="FILE" />
+      </root>
+</configuration>
