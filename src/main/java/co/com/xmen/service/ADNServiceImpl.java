@@ -46,7 +46,7 @@ public class ADNServiceImpl implements ADNService {
 			adnBD.setAdn(gson.toJson(validADNRequest.dna));
 			adnBD.setIsmutant(false);
 			adnRepository.save(adnBD);
-			throw new NotForbidden403Exception("ER", "203", "Cadena ADN Humana.");
+			throw new NotForbidden403Exception("ER", "403", "Cadena ADN Humana.");
 		}
 
 	}

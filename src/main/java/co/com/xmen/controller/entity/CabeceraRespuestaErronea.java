@@ -3,9 +3,9 @@ package co.com.xmen.controller.entity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 @Builder
 @AllArgsConstructor
 public class CabeceraRespuestaErronea {
@@ -16,24 +16,6 @@ public class CabeceraRespuestaErronea {
 	private String descripcion;
 	@Schema(title = "Estado de la transacción")
 	private String tipo;
-
-	public String getCodigo() {
-
-		if (codigo == null) {
-			codigo = "";
-		}
-		return codigo;
-
-	}
-
-	public String getDescripcion() {
-
-		if (descripcion == null) {
-			descripcion = "";
-		}
-		return descripcion;
-
-	}
 
 	public static CabeceraRespuestaErronea crearCabeceraErronea(String errorCode, String descripcionError) {
 		return CabeceraRespuestaErronea.builder().tipo("ER").descripcion(descripcionError).codigo(errorCode).build();

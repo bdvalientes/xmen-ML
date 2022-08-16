@@ -1,8 +1,10 @@
 package co.com.xmen.controller.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class StatisticsADNResponse {
 
 	public Integer count_mutant_dna;

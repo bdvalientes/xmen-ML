@@ -16,10 +16,4 @@ public class BadRequest400Exception extends RuntimeException {
 
 	}
 
-	public BadRequest400Exception() {
-		super("En este momento no podemos atenderlo");
-		this.codigoError = "00001";
-		this.descripcionUsuario = "En este momento no podemos atenderlo";
-	}
-
 }
