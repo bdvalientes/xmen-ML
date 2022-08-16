@@ -1,8 +1,5 @@
 package co.com.xmen.Utils;
 
-import lombok.Data;
-
-@Data
 public class Utils {
 
 	public boolean validValue(String value) {
