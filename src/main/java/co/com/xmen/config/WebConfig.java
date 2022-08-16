@@ -23,13 +23,13 @@ public class WebConfig implements WebMvcConfigurer {
 
 	@Bean
 	public OpenAPI metaData() {
-		return new OpenAPI().info(new Info().title("API REST X-MEN")
-				.description("Validacion cadena ADN").version("1.0.0"));
+		return new OpenAPI()
+				.info(new Info().title("API REST X-MEN").description("Validacion cadena ADN").version("1.0.0"));
 	}
 
 	@Bean
-	public Sink sink(/* LoggingService loggingService , */ HttpLogFormatter httpLogFormatter) {
-		return new SinkDatabase(/* loggingService , */ httpLogFormatter);
+	public Sink sink(HttpLogFormatter httpLogFormatter) {
+		return new SinkDatabase(httpLogFormatter);
 	}
 
 }
